@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0rem;
+      }
+      /* -----------------  Main grid  -------------- */
+      .my-project {
+        display: grid;
+        grid-template-areas:
+          "a"
+          "b";
+        padding-top: 5rem;
+        background-color: #f5f5f5;
+        width: 100%;
+        height: 28rem;
+      }
+
+      /*  ---------------- Section 1 ----------------
+      Layout of Section 1 >> Beatbox display */
+      .section-one {
+        display: grid;
+        grid-template-areas: "c d e";
+        width: inherit;
+        height: 15rem;
+      }
+
+      .display-beatbox-section1 {
+        background-color: #000;
+        min-width: 21.875rem;
+        height: 15rem;
+        padding: 0.625rem;
+      }
+      .beatbox-container {
+        display: grid;
+        grid-template-areas: "f g h i j";
+        height: 15rem;
+      }
+      .beatbox-column1 {
+        background-color: #6756c7;
+        align-content: center;
+      }
+      .beatbox-column1.show-black1 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column1.show-black2 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column1.show-black3 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column1.reset-purple {
+        background-color: #6756c7;
+        height: 15rem;
+        align-content: center;
+      }
+      .beatbox-column2 {
+        background-color: #f443b9;
+        height: auto;
+        align-content: center;
+      }
+      .beatbox-column2.show-black1 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column2.show-black2 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column2.show-black3 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column2.reset-pink {
+        background-color: #f443b9;
+        height: 15rem;
+        align-content: center;
+      }
+      .beatbox-column3 {
+        background-color: #ff7b7b;
+        align-content: center;
+      }
+      .beatbox-column3.show-black1 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column3.show-black2 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column3.show-black3 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column3.reset-peach {
+        background-color: #ff7b7b;
+        height: 15rem;
+        align-content: center;
+      }
+      .beatbox-column4 {
+        background-color: #ff963b;
+        align-content: center;
+      }
+      .beatbox-column4.show-black1 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column4.show-black2 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column4.show-black3 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column4.reset-orange {
+        background-color: #ff963b;
+        height: 15rem;
+        align-content: center;
+      }
+      .beatbox-column5 {
+        background-color: #ffdb4d;
+        align-content: center;
+      }
+      .beatbox-column5.show-black1 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column5.show-black2 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column5.show-black3 {
+        background-color: #000;
+        align-content: center;
+      }
+      .beatbox-column5.reset-yellow {
+        background-color: #ffdb4d;
+        height: 15rem;
+        align-content: center;
+      }
+
+      /*  ---------------- Section 2 ----------------
+      Layout of Section 2 >> Buttons display */
+      .button-section-two {
+        display: flex;
+        justify-content: space-evenly;
+        height: 2rem;
+        margin: 0rem 21%;
+      }
+
+      .start-button {
+        padding: 0rem 2rem;
+        font-size: 1rem;
+        background: #047a04e1;
+        color: #ffffff;
+        outline: 0;
+        border: 0;
+      }
+
+      .reset-button {
+        padding: 0rem 2rem;
+        font-size: 1rem;
+        background: #6756c7;
+        color: #ffffff;
+        outline: 0;
+        border: 0;
+      }
+
+      .stop-button {
+        padding: 0rem 2rem;
+        font-size: 1rem;
+        background: #ff0000;
+        color: #f3f3f3;
+        outline: 0;
+        border: 0;
+        border-right: 0.0625rem solid black;
+        border-bottom: 0.0625rem solid black;
+      }
+
+      .start-button:hover {
+        cursor: pointer;
+      }
+
+      .reset-button:hover {
+        cursor: pointer;
+      }
+
+      .stop-button:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Start >> assign a random percentage fill to each box
+    Reset >> move percentage of box filled to 100%
+    Stop >>  stop the random assingemnt to each box -->
+    <div class="my-project">
+      <!-- Section 1: centered display box -->
+      <div class="section-one">
+        <div class="dummy-box"></div>
+        <div class="display-beatbox-section1">
+          <div class="beatbox-container">
+            <div>
+              <div id="startPurple">
+                <div id="black1" class="beatbox-column1 show-black1"></div>
+                <div id="black2" class="beatbox-column1 show-black2"></div>
+                <div id="black3" class="beatbox-column1 show-black3"></div>
+                <div id="purple" class="beatbox-column1"></div>
+              </div>
+              <div id="resetPurple">
+                <div id="purple" class="beatbox-column1 reset-purple"></div>
+              </div>
+              <div id="stopPurple">
+                <div id="black1" class="beatbox-column1 show-black1"></div>
+                <div id="black2" class="beatbox-column1 show-black2"></div>
+                <div id="black3" class="beatbox-column1 show-black3"></div>
+                <div id="purple" class="beatbox-column1"></div>
+              </div>
+            </div>
+
+            <div>
+              <div id="startPink">
+                <div id="black4" class="beatbox-column2 show-black1"></div>
+                <div id="black5" class="beatbox-column2 show-black2"></div>
+                <div id="black6" class="beatbox-column2 show-black3"></div>
+                <div id="pink" class="beatbox-column2"></div>
+              </div>
+              <div id="resetPink">
+                <div id="pink" class="beatbox-column2 reset-pink"></div>
+              </div>
+              <div id="stopPink">
+                <div id="black4" class="beatbox-column2 show-black1"></div>
+                <div id="black5" class="beatbox-column2 show-black2"></div>
+                <div id="black6" class="beatbox-column2 show-black3"></div>
+                <div id="pink" class="beatbox-column2"></div>
+              </div>
+            </div>
+
+            <div>
+              <div id="startPeach">
+                <div id="black7" class="beatbox-column3 show-black1"></div>
+                <div id="black8" class="beatbox-column3 show-black2"></div>
+                <div id="black9" class="beatbox-column3 show-black3"></div>
+                <div id="peach" class="beatbox-column3"></div>
+              </div>
+              <div id="resetPeach">
+                <div id="peach" class="beatbox-column3 reset-peach"></div>
+              </div>
+              <div id="stopPeach">
+                <div id="black7" class="beatbox-column3 show-black1"></div>
+                <div id="black8" class="beatbox-column3 show-black2"></div>
+                <div id="black9" class="beatbox-column3 show-black3"></div>
+                <div id="peach" class="beatbox-column3"></div>
+              </div>
+            </div>
+
+            <div>
+              <div id="startOrange">
+                <div id="black10" class="beatbox-column4 show-black1"></div>
+                <div id="black11" class="beatbox-column4 show-black2"></div>
+                <div id="black12" class="beatbox-column4 show-black3"></div>
+                <div id="orange" class="beatbox-column4"></div>
+              </div>
+              <div id="resetOrange">
+                <div id="orange" class="beatbox-column4 reset-orange"></div>
+              </div>
+              <div id="stopOrange">
+                <div id="black10" class="beatbox-column4 show-black1"></div>
+                <div id="black11" class="beatbox-column4 show-black2"></div>
+                <div id="black12" class="beatbox-column4 show-black3"></div>
+                <div id="orange" class="beatbox-column4"></div>
+              </div>
+            </div>
+
+            <div>
+              <div id="startYellow">
+                <div id="black13" class="beatbox-column5 show-black1"></div>
+                <div id="black14" class="beatbox-column5 show-black2"></div>
+                <div id="black15" class="beatbox-column5 show-black3"></div>
+                <div id="yellow" class="beatbox-column5"></div>
+              </div>
+              <div id="resetYellow">
+                <div id="yellow" class="beatbox-column5 reset-yellow"></div>
+              </div>
+              <div id="stopYellow">
+                <div id="black13" class="beatbox-column5 show-black1"></div>
+                <div id="black14" class="beatbox-column5 show-black2"></div>
+                <div id="black15" class="beatbox-column5 show-black3"></div>
+                <div id="yellow" class="beatbox-column5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dummy-box"></div>
+      </div>
+      <!--Section 2:background box flex -->
+      <div class="button-section-two">
+        <button class="start-button" onclick="start_Display_Of_Heights()">
+          Start
+        </button>
+        <button class="reset-button" onclick="reset_Heights()">Reset</button>
+        <button class="stop-button" onclick="stop_Random_Display_Of_Height()">
+          Stop
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let startPurple = document.getElementById("startPurple");
+      let resetPurple = document.getElementById("resetPurple");
+      let stopPurple = document.getElementById("stopPurple");
+
+      let startPink = document.getElementById("startPink");
+      let resetPink = document.getElementById("resetPink");
+      let stopPink = document.getElementById("stopPink");
+
+      let startPeach = document.getElementById("startPeach");
+      let resetPeach = document.getElementById("resetPeach");
+      let stopPeach = document.getElementById("stopPeach");
+
+      let startOrange = document.getElementById("startOrange");
+      let resetOrange = document.getElementById("resetOrange");
+      let stopOrange = document.getElementById("stopOrange");
+
+      let startYellow = document.getElementById("startYellow");
+      let resetYellow = document.getElementById("resetYellow");
+      let stopYellow = document.getElementById("stopYellow");
+
+      initialize();
+
+      function initialize() {
+        startPurple.style.display = "none";
+        stopPurple.style.display = "none";
+
+        startPink.style.display = "none";
+        stopPink.style.display = "none";
+
+        startPeach.style.display = "none";
+        stopPeach.style.display = "none";
+
+        startOrange.style.display = "none";
+        stopOrange.style.display = "none";
+
+        startYellow.style.display = "none";
+        stopYellow.style.display = "none";
+      }
+
+      function start_Display_Of_Heights() {
+        startColor1();
+        startColor3();
+        startColor4();
+        startColor2();
+        startColor5();
+      }
+
+      function reset_Heights() {
+        startPurple.style.display = "none";
+        resetPurple.style.display = "block";
+        startPink.style.display = "none";
+        resetPink.style.display = "block";
+        startPeach.style.display = "none";
+        resetPeach.style.display = "block";
+        startOrange.style.display = "none";
+        resetOrange.style.display = "block";
+        startYellow.style.display = "none";
+        resetYellow.style.display = "block";
+      }
+
+      function stop_Random_Display_Of_Height() {}
+
+      function startColor1() {
+        startPurple.style.display = "grid";
+        resetPurple.style.display = "none";
+        stopPurple.style.display = "none";
+        let black1 = document.getElementById("black1");
+        let black2 = document.getElementById("black2");
+        let black3 = document.getElementById("black3");
+        let purple = document.getElementById("purple");
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        if (randomNumber === 1) {
+          black1.style.display = "none";
+          black2.style.display = "none";
+          black3.style.display = "none";
+          black1.style.height = "0rem";
+          black2.style.height = "0rem";
+          black3.style.height = "0rem";
+          black1.style.display = "grid";
+          purple.style.display = "grid";
+          black1.style.height = "3rem";
+          purple.style.height = "12rem";
+        } else if (randomNumber === 2) {
+          black1.style.display = "none";
+          black2.style.display = "none";
+          black3.style.display = "none";
+          black1.style.height = "0rem";
+          black2.style.height = "0rem";
+          black3.style.height = "0rem";
+          black2.style.display = "grid";
+          black2.style.height = "12rem";
+          purple.style.display = "grid";
+          purple.style.height = "3rem";
+        } else if (randomNumber === 3) {
+          black1.style.display = "none";
+          black2.style.display = "none";
+          black3.style.display = "none";
+          black1.style.height = "0rem";
+          black2.style.height = "0rem";
+          black3.style.height = "0rem";
+          black3.style.display = "grid";
+          black3.style.height = "7rem";
+          purple.style.display = "grid";
+          purple.style.height = "8rem";
+        }
+      }
+
+      function startColor2() {
+        startPink.style.display = "grid";
+        resetPink.style.display = "none";
+        stopPink.style.display = "none";
+        let black4 = document.getElementById("black4");
+        let black5 = document.getElementById("black5");
+        let black6 = document.getElementById("black6");
+        let pink = document.getElementById("pink");
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        if (randomNumber === 1) {
+          black4.style.display = "none";
+          black5.style.display = "none";
+          black6.style.display = "none";
+          black4.style.height = "0rem";
+          black5.style.height = "0rem";
+          black6.style.height = "0rem";
+          black5.style.display = "grid";
+          black5.style.height = "4rem";
+          pink.style.display = "grid";
+          pink.style.height = "11rem";
+        } else if (randomNumber === 2) {
+          black4.style.display = "none";
+          black5.style.display = "none";
+          black6.style.display = "none";
+          black4.style.height = "0rem";
+          black5.style.height = "0rem";
+          black6.style.height = "0rem";
+          black6.style.display = "grid";
+          black6.style.height = "13rem";
+          pink.style.display = "grid";
+          pink.style.height = "2rem";
+        } else if (randomNumber === 3) {
+          black4.style.display = "none";
+          black5.style.display = "none";
+          black6.style.display = "none";
+          black4.style.height = "0rem";
+          black5.style.height = "0rem";
+          black6.style.height = "0rem";
+          black4.style.display = "grid";
+          pink.style.display = "grid";
+          black4.style.height = "6rem";
+          pink.style.height = "9rem";
+        }
+      }
+
+      function startColor3() {
+        startPeach.style.display = "grid";
+        resetPeach.style.display = "none";
+        stopPeach.style.display = "none";
+        let black7 = document.getElementById("black7");
+        let black8 = document.getElementById("black8");
+        let black9 = document.getElementById("black9");
+        let peach = document.getElementById("peach");
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        if (randomNumber === 1) {
+          black7.style.display = "none";
+          black8.style.display = "none";
+          black9.style.display = "none";
+          black7.style.height = "0rem";
+          black8.style.height = "0rem";
+          black9.style.height = "0rem";
+          black8.style.display = "grid";
+          black8.style.height = "5rem";
+          peach.style.display = "grid";
+          peach.style.height = "10rem";
+        } else if (randomNumber === 2) {
+          black7.style.display = "none";
+          black8.style.display = "none";
+          black9.style.display = "none";
+          black7.style.height = "0rem";
+          black8.style.height = "0rem";
+          black9.style.height = "0rem";
+          black9.style.display = "grid";
+          black9.style.height = "4rem";
+          peach.style.display = "grid";
+          peach.style.height = "11rem";
+        } else if (randomNumber === 3) {
+          black7.style.display = "none";
+          black8.style.display = "none";
+          black9.style.display = "none";
+          black7.style.height = "0rem";
+          black8.style.height = "0rem";
+          black9.style.height = "0rem";
+          black7.style.display = "grid";
+          peach.style.display = "grid";
+          black7.style.height = "10rem";
+          peach.style.height = "5rem";
+        }
+      }
+
+      function startColor4() {
+        startOrange.style.display = "grid";
+        resetOrange.style.display = "none";
+        stopOrange.style.display = "none";
+        let black10 = document.getElementById("black10");
+        let black11 = document.getElementById("black11");
+        let black12 = document.getElementById("black12");
+        let orange = document.getElementById("orange");
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        if (randomNumber === 1) {
+          black10.style.display = "none";
+          black11.style.display = "none";
+          black12.style.display = "none";
+          black10.style.height = "0rem";
+          black11.style.height = "0rem";
+          black12.style.height = "0rem";
+          black11.style.display = "grid";
+          black11.style.height = "0rem";
+          orange.style.display = "grid";
+          orange.style.height = "15rem";
+        } else if (randomNumber === 2) {
+          black10.style.display = "none";
+          black11.style.display = "none";
+          black12.style.display = "none";
+          black10.style.height = "0rem";
+          black11.style.height = "0rem";
+          black12.style.height = "0rem";
+          black12.style.display = "grid";
+          black12.style.height = "5rem";
+          orange.style.display = "grid";
+          orange.style.height = "10rem";
+        } else if (randomNumber === 3) {
+          black10.style.display = "none";
+          black11.style.display = "none";
+          black12.style.display = "none";
+          black10.style.height = "0rem";
+          black11.style.height = "0rem";
+          black12.style.height = "0rem";
+          black10.style.display = "grid";
+          orange.style.display = "grid";
+          black10.style.height = "11rem";
+          orange.style.height = "4rem";
+        }
+      }
+
+      function startColor5() {
+        startYellow.style.display = "grid";
+        resetYellow.style.display = "none";
+        stopYellow.style.display = "none";
+        let black13 = document.getElementById("black13");
+        let black14 = document.getElementById("black14");
+        let black15 = document.getElementById("black15");
+        let yellow = document.getElementById("yellow");
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+
+        if (randomNumber === 1) {
+          black13.style.display = "none";
+          black14.style.display = "none";
+          black15.style.display = "none";
+          black13.style.height = "0rem";
+          black14.style.height = "0rem";
+          black15.style.height = "0rem";
+          black13.style.display = "grid";
+          yellow.style.display = "grid";
+          black13.style.height = "11rem";
+          yellow.style.height = "4rem";
+        } else if (randomNumber === 2) {
+          black13.style.display = "none";
+          black14.style.display = "none";
+          black15.style.display = "none";
+          black13.style.height = "0rem";
+          black14.style.height = "0rem";
+          black15.style.height = "0rem";
+          black14.style.display = "grid";
+          black14.style.height = "15rem";
+          yellow.style.display = "grid";
+          yellow.style.height = "0rem";
+        } else if (randomNumber === 3) {
+          black13.style.display = "none";
+          black14.style.display = "none";
+          black15.style.display = "none";
+          black13.style.height = "0rem";
+          black14.style.height = "0rem";
+          black15.style.height = "0rem";
+          black15.style.display = "grid";
+          black15.style.height = "5rem";
+          yellow.style.display = "grid";
+          yellow.style.height = "10rem";
+        }
+      }
+    </script>
+  </body>
+</html>
